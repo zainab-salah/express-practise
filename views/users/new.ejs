@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>New User</title>
+</head>
+<body>
+    <h1>Create a New User</h1>
+    <form action="/users" method="POST">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" value="<%= firstName %>">
+        <button type="submit">Create User</button>
+    </form>
+</body>
+</html>

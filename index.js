@@ -1,12 +1,13 @@
 const express = require("express");
 const app = express();
+app.use(express.urlencoded({
+    extended: true
+}))
 app.set("view engine", "ejs"); // set the view engine to ejs
-app.use(logger);
+app.use(express.static("public")); // set the public folder as static
 // server name - method - route - callback function
-app.get("/", (req, res) => {
-  //res.download("hello.txt");
-  // res.json({message: "Hello World"});
-  res.render("index", { title: "Express" });
+app.get("/",logger, (req, res) => {
+
 });
 
 

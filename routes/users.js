@@ -1,5 +1,5 @@
 const express = require("express");
-
+ 
 const router = express.Router(); // like main App but mini app for users
 
 router.get("/", (req, res) => {
@@ -7,10 +7,11 @@ router.get("/", (req, res) => {
 });
 
 router.get("/new", (req, res) => {
-  res.send("New User Page");
+  res.render("users/new", { firstName: "New User" });
 });
 
 router.post("/", (req, res) => {
+    console.log(req.body.firstName)
   res.send("Create User");
 });
 
@@ -27,7 +28,7 @@ router
   
     res.send(`User ID: ${req.params.id}`);
   });
-const users = [{ name: "John" }, { name: "Jane" }, { name: "Jake" }];
+//const users = [{ name: "John" }, { name: "Jane" }, { name: "Jake" }];
 
 // router.get("/:id", (req, res) => {
 //   req.params.id;
